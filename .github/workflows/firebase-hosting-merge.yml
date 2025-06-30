@@ -27,6 +27,11 @@ jobs:
         with:
           name: dist
           path: dist/*
+      - name: Upload firebase.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: firebase.json
+          path: firebase.json
 
   deploy:
     runs-on: ubuntu-latest
@@ -36,6 +41,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
+      - name: Download firebase.json from build
+        uses: actions/download-artifact@v4
+        with:
+          name: firebase.json
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
