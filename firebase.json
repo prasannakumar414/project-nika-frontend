@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "/home/runner/work/project-nika-frontend/project-nika-frontend/dist",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
