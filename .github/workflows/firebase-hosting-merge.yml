@@ -21,7 +21,7 @@ jobs:
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
             - args: [--global, gulp, prettier, typescript]
-      - run: pnpm install && pnpm build
+      - run: pnpm install && pnpm build && ls
 
   deploy:
     runs-on: ubuntu-latest
